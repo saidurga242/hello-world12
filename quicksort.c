@@ -1,20 +1,21 @@
+*******************************************************************************/
 /*Quicksort*/
 #include<stdio.h>
-void quicksort(int number[25],int first,int last)
+void quicksort(int number[],int first,int last)
 {
      /*pivot is the highest index element*/
    int i, j, pivot, temp;
-
+     /*i and j are indices of the elements*/
    if(first<last){
       pivot=first;
       i=first;
       j=last;
-
       while(i<j){
          while(number[i]<=number[pivot]&&i<last)
             i++;
          while(number[j]>number[pivot])
             j--;
+           /*If fast is less than last then swap can be done*/
          if(i<j){
             temp=number[i];
             number[i]=number[j];
@@ -32,15 +33,15 @@ void quicksort(int number[25],int first,int last)
 }
 
 int main(){
-   int i, count, number[25];
-   scanf("%d",&count);
-   printf("Enter %d elements: ", count);
-   for(i=0;i<count;i++)
+   int i,n;
+     /*readinf size of the array to sort*/
+   scanf("%d",&n);
+     int number[n];
+      for(i=0;i<n;i++)
       scanf("%d",&number[i]);
-   quicksort(number,0,count-1);
-   printf("Order of Sorted elements: ");
-   for(i=0;i<count;i++)
-      printf(" %d",number[i]);
-
-   return 0;
+     /*Applying sort for the elements*/
+      quicksort(number,0,n-1);
+       for(i=0;i<n;i++)
+      printf(" sorted elements:%d",number[i]);
+     return 0;
 }
