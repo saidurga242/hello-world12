@@ -1,6 +1,7 @@
 *******************************************************************************/
 /*Quicksort*/
 #include<stdio.h>
+#include<math.h>
 void quicksort(int number[],int first,int last)
 {
      /*pivot is the highest index element*/
@@ -37,11 +38,12 @@ int main(){
      /*readinf size of the array to sort*/
    scanf("%d",&n);
      int number[n];
+     /*Generating random numbers*/
       for(i=0;i<n;i++)
-      scanf("%d",&number[i]);
+     number[i]=rand%10;
      /*Applying sort for the elements*/
       quicksort(number,0,n-1);
        for(i=0;i<n;i++)
-      printf(" sorted elements:%d",number[i]);
+      printf("%d ",number[i]);
      return 0;
 }
